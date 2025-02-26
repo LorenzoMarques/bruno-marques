@@ -2,8 +2,6 @@
 import { ListBox } from "primereact/listbox";
 import useHeader from "./hooks/useHeader";
 import useTheme from "./hooks/useTheme";
-import { FaMoon, FaSun } from "react-icons/fa";
-import { InputSwitch } from 'primereact/inputswitch';
 import SwitchThemeButton from "./switchThemeButton";
 
 

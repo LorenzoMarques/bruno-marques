@@ -5,19 +5,22 @@
 @tailwind utilities;
 
 :root {
-  --background: #F3F3F3;
+  --background: #ffffff;
   --foreground:#8A8A8A;
-  --natural-grey2:#4F4F4F;
+  --natural-grey:#4F4F4F;
   --black:#2D2F30;
   --primary-color:#094B72;
   --secondary-color:#F2F7FF;
   --shadows: #cacaca;
+  --secondary-font-color:#F3F3F3;;
 }
 
 [data-theme='dark'] {
+  --primary-color: #f3f3f3af;
   --background: #2c2a2a;
   --foreground: #e7e3e3;
   --shadows: #424242;
+  --secondary-font-color:#414040;;
 }
 
 body {

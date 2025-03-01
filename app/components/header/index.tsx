@@ -4,13 +4,13 @@ import useHeader from "./hooks/useHeader";
 import useTheme from "./hooks/useTheme";
 import SwitchThemeButton from "./switchThemeButton";
 
-
 export default function Header() {
-    const { toggleMenu, options, menuVisible } = useHeader()
+    const { toggleMenu, options, menuVisible, menuRef, buttonRef } = useHeader()
     const { theme, toggleTheme } = useTheme();
 
+
     return (
-        <header className="w-full flex justify-end items-center p-4 fixed backdrop-blur-md">
+        <header className="w-full flex justify-end items-center p-4 fixed backdrop-blur-md z-[1]">
 
             <SwitchThemeButton theme={theme} toggleTheme={toggleTheme} className="block lg:hidden mr-10" />
 
@@ -18,6 +18,7 @@ export default function Header() {
             <button
                 className="lg:hidden flex flex-col justify-between items-center w-8 h-6 p-1"
                 onClick={toggleMenu}
+                ref={buttonRef}
             >
                 <div className="flex items-center space-x-2">
                     <span className="w-2 h-2 bg-[--foreground] rounded-full"></span>
@@ -33,11 +34,14 @@ export default function Header() {
             </nav>
 
             {menuVisible && (
-                <div className="lg:hidden absolute top-12 right-4 bg-[--background] p-4 rounded-lg shadow-lg shadow-[--shadows] w-40 ">
+                <div className="lg:hidden absolute top-12 right-4 bg-[--background] p-4 rounded-lg shadow-lg shadow-[--shadows] w-40 " ref={menuRef}>
                     <ListBox
                         options={options}
-                        onChange={(e) => console.log("Opção selecionada:", e.value)}
-                    />
+                        onChange={(e) => {
+                            const section = document.getElementById(e.value);
+
+                            section?.scrollIntoView({ behavior: "smooth" });
+                        }} />
                 </div>
             )}
 

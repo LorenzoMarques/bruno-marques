@@ -16,9 +16,9 @@
 }
 
 [data-theme='dark'] {
-  --primary-color: #f3f3f3af;
+  --primary-color: #e7e3e3;
   --background: #2c2a2a;
-  --foreground: #e7e3e3;
+  --foreground: #f3f3f3af;
   --shadows: #424242;
   --secondary-font-color:#414040;;
 }

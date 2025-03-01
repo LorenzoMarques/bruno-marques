@@ -10,7 +10,7 @@ export default function Header() {
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <header className="w-full flex justify-end items-center p-4 fixed">
+        <header className="w-full flex justify-end items-center p-4 fixed backdrop-blur-md">
 
             <SwitchThemeButton theme={theme} toggleTheme={toggleTheme} className="block lg:hidden mr-10" />
 
@@ -27,10 +27,9 @@ export default function Header() {
             </button>
 
             <nav className="hidden lg:flex space-x-8">
-                <button>CONTATO</button>
-                <button>DEPOIMENTOS</button>
-                <button>SOBRE</button>
-                <button>TERMOS</button>
+                <a href="#about" className="cursor-pointer">SOBRE</a>
+                <a href="#testimonials" className="cursor-pointer">DEPOIMENTOS</a>
+                <a href="#contact" className="cursor-pointer">CONTATO</a>
             </nav>
 
             {menuVisible && (
